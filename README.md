@@ -1,2 +1,3 @@
-# panther
-...nuxtjs is not happy
+# Panther
+
+Insired by NuxtJS 3

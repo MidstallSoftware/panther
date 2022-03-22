@@ -1,0 +1,50 @@
+{
+  "name": "panther",
+  "version": "0.1.0",
+  "description": "...nuxtjs is not happy",
+  "main": "dist/index.js",
+  "types": "types/index.d.ts",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MidstallSoftware/panther.git"
+  },
+  "author": "RossComputerGuy",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/MidstallSoftware/panther/issues"
+  },
+  "homepage": "https://github.com/MidstallSoftware/panther#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
+    "@types/express": "^4.17.13",
+    "@types/find": "^0.2.1",
+    "@types/lodash": "^4.14.180",
+    "@types/mkdirp": "^1.0.2",
+    "@types/node": "^17.0.22",
+    "babel-loader": "^8.2.3",
+    "css-loader": "^6.7.1",
+    "deepmerge": "^4.2.2",
+    "express": "^4.17.3",
+    "find": "^0.3.0",
+    "hyperapp": "^2.0.21",
+    "hyperapp-render": "^4.0.0",
+    "jsonschema": "^1.4.0",
+    "knex": "^1.0.4",
+    "lodash": "^4.17.21",
+    "mkdirp": "^1.0.4",
+    "objection": "^3.0.1",
+    "sass": "^1.49.9",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.2.8",
+    "typescript": "^4.6.2",
+    "vue": "^3.2.31",
+    "vue-loader": "^17.0.0",
+    "webpack": "^5.70.0"
+  }
+}
