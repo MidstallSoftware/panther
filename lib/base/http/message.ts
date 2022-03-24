@@ -19,12 +19,14 @@ export class BaseMessage {
   }
 
   toJSON(): BaseMessageInterface {
-    return this.error ? {
-      error: { message: this.error.message, name: this.error.name },
-      type: 'error'
-    } : { data: this.data, type: this.type }
+    return this.error
+      ? {
+          error: { message: this.error.message, name: this.error.name },
+          type: 'error',
+        }
+      : { data: this.data, type: this.type }
   }
-  
+
   static fromJSON(json: BaseMessageInterface): BaseMessage {
     return new BaseMessage(json.data, json.error || json.type)
   }

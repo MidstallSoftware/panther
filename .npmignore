@@ -1,2 +1,7 @@
 example
 lib
+.eslintrc.js
+.prettierignore
+.prettierrc
+webpack.config.js
+*.js.map

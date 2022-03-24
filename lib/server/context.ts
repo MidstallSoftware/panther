@@ -1,23 +1,34 @@
 import express from 'express'
-import { Component } from 'vue'
-import createBaseContext, { BaseContext, BaseContextOptions } from '../base/context'
+import { renderToString } from 'vue/server-renderer'
+import {
+  WebContext,
+  WebContextOptions,
+  createWebContext,
+  createWebVue,
+} from '../web/context'
 
-export interface ServerContextOptions extends BaseContextOptions {
-  vue?: {
-    components?: Component[],
-    layouts?: Component[],
-    pages?: Component[]
-  }
-}
+export type ServerContextOptions = WebContextOptions
 
-export interface ServerContext extends BaseContext {
+export interface ServerContext extends WebContext {
   express: Express.Application
 }
 
-export function createServerContext(options: ServerContextOptions): ServerContext {
-  return {
-    ...createBaseContext(options),
+export function createServerContext(
+  options: ServerContextOptions
+): ServerContext {
+  const ctx = {
+    ...createWebContext(options),
     express: express(),
   }
+
+  for (const p in options.vue.pages) {
+    ctx.express.get(p, (req, res) => {
+      const vue = createWebVue(ctx)
+      renderToString(vue)
+        .then((val) => res.send(val))
+        .catch(() => res.status(500).send(''))
+    })
+  }
+  return ctx
 }
 export default createServerContext

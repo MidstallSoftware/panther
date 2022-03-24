@@ -1,35 +1,26 @@
 {
-	"compilerOptions": {
-		"lib": ["es2021", "DOM"],
-		"module": "commonjs",
-		"target": "es6",
-		"moduleResolution": "node",
-		"strict": true,
-		"emitDecoratorMetadata": true,
-		"experimentalDecorators": true,
-		"esModuleInterop": true,
-		"noImplicitAny": true,
-		"resolveJsonModule": true,
-		"allowSyntheticDefaultImports": true,
-		"sourceMap": true,
-		"outDir": "dist",
-		"baseUrl": ".",
-		"declaration": true,
-		"declarationDir": "types",
-		"types": [
-			"@types/node"
-		],
-		"paths": {
-			"*": [
-				"node_modules/*"
-			]
-		}
-	},
-  "exclude": [
-    "example",
-    "node_modules/*"
-  ],
-	"include": [
-		"lib/**/*"
-	]
+  "compilerOptions": {
+    "lib": ["es2018", "DOM"],
+    "module": "commonjs",
+    "target": "es6",
+    "moduleResolution": "node",
+    "strict": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "noImplicitAny": true,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
+    "sourceMap": true,
+    "baseUrl": ".",
+    "declaration": true,
+    "declarationDir": "typings",
+    "types": ["@types/node"],
+    "paths": {
+      "*": ["node_modules/*"],
+      "@/*": ["./lib/*"]
+    }
+  },
+  "exclude": ["example", "node_modules/*"],
+  "include": ["lib/**/*"]
 }

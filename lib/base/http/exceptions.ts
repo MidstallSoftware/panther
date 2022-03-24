@@ -1,5 +1,8 @@
 import { ValidationError as JSONValidationError } from 'jsonschema'
-import { ValidationError as DBValidationError, NotFoundError as DBNotFoundError } from 'objection'
+import {
+  ValidationError as DBValidationError,
+  NotFoundError as DBNotFoundError,
+} from 'objection'
 import { DBError } from 'db-errors'
 
 export interface HttpErrorJSON {
@@ -10,7 +13,13 @@ export interface HttpErrorJSON {
 export interface HttpErrorWithJSON {
   status: number
   detail: string
-  errors: (JSONValidationError | DBValidationError | DBNotFoundError | DBError | string)[]
+  errors: (
+    | JSONValidationError
+    | DBValidationError
+    | DBNotFoundError
+    | DBError
+    | string
+  )[]
 }
 
 export class HttpError extends Error {

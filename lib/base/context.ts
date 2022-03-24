@@ -12,9 +12,12 @@ export interface BaseContext {
 
 export function createBaseContext(options: BaseContextOptions): BaseContext {
   return {
-    options: deepmerge<BaseContextOptions>({
-      debug: env !== 'production'
-    }, options)
+    options: deepmerge<BaseContextOptions>(
+      {
+        debug: env !== 'production',
+      },
+      options
+    ),
   }
 }
 export default createBaseContext

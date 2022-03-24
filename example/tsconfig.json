@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ES2018",
-    "module": "ESNext",
+    "module": "commonjs",
     "moduleResolution": "Node",
     "lib": ["ESNext", "ESNext.AsyncIterable", "DOM"],
     "esModuleInterop": true,
@@ -17,9 +17,8 @@
       "~/*": ["./*"],
       "@/*": ["./*"]
     },
-    "types": [
-      "@types/node",
-    ]
+    "types": ["@types/node", "panther"]
   },
-  "exclude": ["node_modules", ".panther"]
+  "exclude": ["node_modules", ".panther"],
+  "include": ["vue-shims.d.ts"]
 }
